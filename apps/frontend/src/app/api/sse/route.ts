@@ -15,17 +15,18 @@ export async function GET() {
     start(controller) {
       const message = {
         type: 'init',
-        payload: { content: 'Hey, I am a message.' },
+        payload: { id: 0, content: 'Hey, I am a message.' },
       };
       controller.enqueue(
         encoder.encode(`data: ${JSON.stringify(message)}\n\n`)
       );
 
-      const channel = 'session-123';
+      const channel = 'future-123';
 
       // Subscribe to Redis updates for the key: "posts"
       // In case of any error, just log it
       redisSubscriber.subscribe(channel, (err) => {
+        console.log({ channel });
         if (err) console.log(err);
       });
 

@@ -5,11 +5,8 @@ import { useEffect, useState } from 'react';
 type Message = {
   type: string;
   payload: {
-    success: boolean;
-    playerId: string;
-    nick: string;
-    code: string;
-    content?: string;
+    id: number;
+    content: string;
   };
 };
 
@@ -45,7 +42,7 @@ export const Messages = () => {
       {messages.map((message, index) => (
         <div key={index}>
           <p>
-            {message.type}: {message.payload.content}
+            {message.type}({message.payload.id}): {message.payload.content}
           </p>
         </div>
       ))}

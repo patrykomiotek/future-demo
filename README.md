@@ -1,4 +1,6 @@
-# Live 2024-03-26
+# Future 6.12.2024
+
+Run frontend: `nx run frontend:dev`
 
 Create an account on [Upstash.com](https://upstash.com) and populate below env variables in `apps/frontend/.env.local`:
 
